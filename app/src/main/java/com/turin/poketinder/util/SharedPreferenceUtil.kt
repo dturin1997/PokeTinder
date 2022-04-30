@@ -52,6 +52,7 @@ class SharedPreferenceUtil {
             .putBoolean(INTRO, true)
             .apply()
     }
+    
 
     fun getIntroShow(): Boolean = sharedPreference
         .getBoolean(INTRO, false)

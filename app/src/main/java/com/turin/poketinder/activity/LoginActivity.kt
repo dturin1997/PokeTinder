@@ -26,15 +26,26 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
     }
 
     fun startLogin(view: View){
+        binding.tvEdtEmail.visibility = View.GONE
+        binding.tvEdtPassword.visibility = View.GONE
         //validateInput()
-        val user: User? = sharedPreferenceUtil.getUser()
+        if(binding.edtEmail.text.isEmpty()){
+            binding.tvEdtEmail.visibility = View.VISIBLE
+            binding.tvEdtEmail.setText("Ingrese el Email")
+        }else if(binding.edtPassword.text.isEmpty()){
+            binding.tvEdtPassword.visibility = View.VISIBLE
+            binding.tvEdtPassword.setText("Ingrese el Password")
+        }else{
+            val user: User? = sharedPreferenceUtil.getUser()
 
-        if(user?.email.equals(binding.edtEmail.text.toString()) && user?.password.equals(binding.edtPassword.text.toString())){
+            if(user?.email.equals(binding.edtEmail.text.toString()) && user?.password.equals(binding.edtPassword.text.toString())){
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("user", user)
                 startActivity(intent)
-        }else{
-            Toast.makeText(this,"Error Usuario",Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this,"Error Usuario",Toast.LENGTH_SHORT).show()
+            }
         }
+
     }
 }
