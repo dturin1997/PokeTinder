@@ -1,4 +1,4 @@
-package com.turin.poketinder.data
+package com.turin.poketinder.data.model
 
 import java.io.Serializable
 

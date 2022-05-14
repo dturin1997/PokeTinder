@@ -1,4 +1,4 @@
-package com.turin.poketinder.activity
+package com.turin.poketinder.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

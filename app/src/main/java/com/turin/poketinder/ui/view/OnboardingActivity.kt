@@ -1,4 +1,4 @@
-package com.turin.poketinder.activity
+package com.turin.poketinder.ui.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,10 +10,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.turin.poketinder.R
-import com.turin.poketinder.adapter.OnboardingAdapter
+import com.turin.poketinder.data.SharedPreferenceUtil
+import com.turin.poketinder.ui.adapter.OnboardingAdapter
 import com.turin.poketinder.databinding.ActivityOnboardingBinding
 import com.turin.poketinder.util.Mock
-import com.turin.poketinder.util.SharedPreferenceUtil
 
 class OnboardingActivity : BaseActivity<ActivityOnboardingBinding>(ActivityOnboardingBinding::inflate) {
 

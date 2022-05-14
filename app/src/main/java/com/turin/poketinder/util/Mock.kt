@@ -1,6 +1,6 @@
 package com.turin.poketinder.util
 
-import com.turin.poketinder.data.Onboarding
+import com.turin.poketinder.data.model.Onboarding
 
 class Mock {
     fun getOnboarding() = listOf(

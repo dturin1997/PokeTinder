@@ -1,11 +1,11 @@
-package com.turin.poketinder.adapter
+package com.turin.poketinder.ui.adapter
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.turin.poketinder.R
-import com.turin.poketinder.data.Onboarding
+import com.turin.poketinder.data.model.Onboarding
 import com.turin.poketinder.databinding.ItemOnboardingBinding
 import com.turin.poketinder.util.inflate
 
@@ -17,7 +17,7 @@ class OnboardingAdapter(val list: List<Onboarding>) :
         return OnboardingHolder(view)
     }
 
-    override fun onBindViewHolder(holder:OnboardingHolder, position: Int){
+    override fun onBindViewHolder(holder: OnboardingHolder, position: Int){
         val item = list[position]
         holder.bind(item)
     }
