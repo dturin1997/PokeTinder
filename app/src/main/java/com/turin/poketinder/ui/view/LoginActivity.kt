@@ -19,13 +19,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::i
         loginViewModel.onCreate()
 
         loginViewModel.emptyEmailError.observe(this){
-            //Toast.makeText(this, "Ingrese los datos de usuario",Toast.LENGTH_SHORT).show()
             binding.tvEdtEmail.visibility = View.VISIBLE
             binding.tvEdtEmail.setText("Ingrese el Email")
         }
 
         loginViewModel.emptyPasswordError.observe(this){
-            //Toast.makeText(this, "Ingrese los datos de usuario",Toast.LENGTH_SHORT).show()
             binding.tvEdtPassword.visibility = View.VISIBLE
             binding.tvEdtPassword.setText("Ingrese el Password")
         }

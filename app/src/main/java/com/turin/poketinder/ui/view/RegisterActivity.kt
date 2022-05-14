@@ -18,27 +18,22 @@ class RegisterActivity: BaseActivity<ActivityRegisterBinding>(ActivityRegisterBi
         RegisterViewModel.onCreate()
 
         RegisterViewModel.emptyUserError.observe(this){
-            //Toast.makeText(this, "Ingrese los datos de usuario",Toast.LENGTH_SHORT).show()
             binding.tvUserName.visibility = View.VISIBLE
             binding.tvUserName.setText("Ingrese el Username")
         }
         RegisterViewModel.emptyEmailError.observe(this){
-            //Toast.makeText(this, "Ingrese los datos de usuario",Toast.LENGTH_SHORT).show()
             binding.tvEmail.visibility = View.VISIBLE
             binding.tvEmail.setText("Ingrese el Email")
         }
         RegisterViewModel.emptyPassword1Error.observe(this){
-            //Toast.makeText(this, "Ingrese los datos de usuario",Toast.LENGTH_SHORT).show()
             binding.tvPassword.visibility = View.VISIBLE
             binding.tvPassword.setText("Ingrese el Password")
         }
         RegisterViewModel.emptyPassword2Error.observe(this){
-            //Toast.makeText(this, "Ingrese los datos de usuario",Toast.LENGTH_SHORT).show()
             binding.tvPassword.visibility = View.VISIBLE
             binding.tvPassword.setText("Ingrese el Password")
         }
         RegisterViewModel.noMatchPassword1and2Error.observe(this){
-            //Toast.makeText(this, "Ingrese los datos de usuario",Toast.LENGTH_SHORT).show()
             binding.tvPassword.visibility = View.VISIBLE
             binding.tvPassword.setText("El password no coincide")
         }
