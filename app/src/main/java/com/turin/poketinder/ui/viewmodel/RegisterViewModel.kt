@@ -1,9 +1,9 @@
-package com.turin.poketinder.viewmodel
+package com.turin.poketinder.ui.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.MutableLiveData
-import com.turin.poketinder.data.SharedPreferenceUtil
 import com.turin.poketinder.data.model.User
+import com.turin.poketinder.util.SharedPreferenceUtil
 
 class RegisterViewModel(private val context: Context) {
     private lateinit var sharedPreferenceUtil: SharedPreferenceUtil

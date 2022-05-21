@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.turin.poketinder.databinding.ActivityLoginBinding
-import com.turin.poketinder.viewmodel.LoginViewModel
+import com.turin.poketinder.ui.viewmodel.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate){
 

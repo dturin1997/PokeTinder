@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.turin.poketinder.databinding.ActivityRegisterBinding
-import com.turin.poketinder.viewmodel.RegisterViewModel
+import com.turin.poketinder.ui.viewmodel.RegisterViewModel
 
 class RegisterActivity: BaseActivity<ActivityRegisterBinding>(ActivityRegisterBinding::inflate) {
 

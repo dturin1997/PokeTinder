@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.turin.poketinder.data.SharedPreferenceUtil
 import com.turin.poketinder.databinding.ActivitySplashBinding
+import com.turin.poketinder.util.SharedPreferenceUtil
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding::inflate) {
 

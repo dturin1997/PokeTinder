@@ -1,4 +1,4 @@
-package com.turin.poketinder.data
+package com.turin.poketinder.util
 
 import android.content.Context
 import android.content.SharedPreferences
