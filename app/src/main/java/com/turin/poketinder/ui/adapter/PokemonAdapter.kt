@@ -8,7 +8,6 @@ import com.turin.poketinder.R
 import com.turin.poketinder.databinding.ItemPokemonBinding
 import com.turin.poketinder.domain.model.Pokemon
 import com.turin.poketinder.util.inflate
-import javax.security.auth.callback.Callback
 
 class PokemonAdapter(
     var list: List<Pokemon>,
