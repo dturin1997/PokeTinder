@@ -1,6 +1,7 @@
 package com.turin.poketinder.ui.view
 
 import android.app.FragmentTransaction
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -10,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DefaultItemAnimator
 import com.turin.poketinder.databinding.FragmentHomeBinding
+import com.turin.poketinder.domain.model.MyPokemon
 import com.turin.poketinder.domain.model.Pokemon
 import com.turin.poketinder.ui.adapter.PokemonAdapter
 import com.turin.poketinder.ui.viewmodel.HomeViewModel
@@ -28,7 +30,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
 
         private var listPokemon:List<Pokemon> = emptyList()
         //Tiene que ser val no var
-        private val mainViewModel: HomeViewModel by viewModels()
+        private val homeViewModel: HomeViewModel by viewModels()
         private val manager by lazy {CardStackLayoutManager(context,this)}
         private val adapter by lazy {PokemonAdapter(listPokemon, this)}
 
@@ -38,7 +40,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
         super.onCreate(savedInstanceState)
         initializeTinderCard()
         observeValues()
-        mainViewModel.onCreate()
+        homeViewModel.onCreate()
 
     }
 
@@ -76,11 +78,11 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
             binding.rvTinderPokemon.swipe()
         }
 
-        mainViewModel.isLoading.observe(this){
+        homeViewModel.isLoading.observe(this){
             binding.progressBar.isVisible = it
         }
 
-        mainViewModel.pokemonList.observe(this){
+        homeViewModel.pokemonList.observe(this){
             adapter.list = it
             adapter.notifyDataSetChanged()
             binding.floatingActionButton.visibility = View.VISIBLE
@@ -113,11 +115,22 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infla
         }
     }
         override fun onClickPokemonInformation(pokemon: Pokemon){
-
+            val intent = Intent(context,PokemonDetailActivity::class.java)
+            intent.putExtra("ID_POKEMON",pokemon.getPokemonId())
+            startActivity(intent)
         }
         override fun onCardDragging(direction: Direction?, ratio: Float){
         }
         override fun onCardSwiped(direction: Direction?){
+            if (direction == Direction.Right){
+                val pokemon = adapter.list[manager.topPosition - 1]
+                val myPokemon = MyPokemon(
+                    name = pokemon.name,
+                    image = pokemon.getPokemonImage(),
+                    idPokemon = pokemon.getPokemonId()
+                )
+                homeViewModel.savePokemonUseCase(myPokemon)
+            }
         }
         override fun onCardRewound(){
         }
