@@ -23,10 +23,10 @@ class PokemonRepository @Inject constructor(
         return response.map {it.toDomain()}
     }
 
-    suspend fun getPokemonByIdFromApi(idPokemon:String): PokemonDetail{
-        val response =pokemonService.getPokemonsById(idPokemon)
+    suspend fun getPokemonDetailFromApi(idPokemon:String): PokemonDetailModel{
+        //val response =pokemonService.getPokemonsById(idPokemon)
         //return response.map {it.toDomain()}
-        return response.ToDomain()
+        return pokemonService.getPokemonById(idPokemon)
     }
 
     suspend fun getMyPokemonsFromDatabase():List<MyPokemon>{
