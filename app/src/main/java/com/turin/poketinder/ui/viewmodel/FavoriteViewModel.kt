@@ -23,10 +23,12 @@ class FavoriteViewModel @Inject constructor(
         viewModelScope.launch {
             isLoading.postValue(true)
             val result = getMyPokemonsUseCase()
-            if (result.isNotEmpty()){
+            //Se comentó debido a que almacenda el valor anterior
+            //a pesar que se borró
+            //if (result.isNotEmpty()){
                 myPokemonList.postValue(result)
                 isLoading.postValue(false)
-            }
+            //}
         }
     }
 
