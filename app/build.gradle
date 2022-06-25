@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -39,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.firebase:firebase-config-ktx:21.1.0'
+
     //Semana 11
     def room_version = "2.3.0"
     def http3_version = "4.9.0"
